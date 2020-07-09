@@ -1,4 +1,3 @@
-
 # TencentCloud ENI Module for Terraform
 
 ## terraform-tencentcloud-eni
@@ -50,7 +49,7 @@ This module can create ENI and ENI attachment.
 | security_groups | Specify the security group id set which will bind on the ENI when `eni_id` is not specified. | list(string) | [] | no 
 | region | TencentCloud region to launch resources. | string |  | no 
 | tags | A map of tags to add to all resources. | map(string) | {} | no 
-| project_id | The project id to launch all resources. | string | 0 | no 
+| project_id | The project id to launch all resources. | number | 0 | no 
 | subnet_cidr | Specify the cidr block when `vpc_id` is not specified. | string |  | no 
 | cvm_name | Specify the CVM name to create a CVM when `cvm_id` is not specified. | string |  | no 
 | vpc_cidr | Specify the cidr block when `vpc_id` is not specified. | string |  | no 
@@ -61,9 +60,8 @@ This module can create ENI and ENI attachment.
 | cvm_id | Specify the CVM id to bind with the ENI. | string |  | no 
 | vpc_id | Specify the VPC id to launch resources. | string |  | no 
 | subnet_id | Specify the subnet id to launch resources. | string |  | no 
-| new_ipv4_count | Specify how many ipv4 will be allocated when `eni_id` is not specified. | string | 0 | no 
-| attach_cvm | Specify if attach the CVM to the ENI. | string | false | no 
-
+| new_ipv4_count | Specify how many ipv4 will be allocated when `eni_id` is not specified. | number | 0 | no 
+| attach_cvm | Specify if attach the CVM to the ENI. | bool | false | no 
 
 ## Outputs
 
@@ -82,7 +80,6 @@ This module can create ENI and ENI attachment.
 | project_id | The project id. |
 | subnet_cidr | The list of subnet cidr block. |
 | cvm_id | The list of CVM id. |
-
 
 ## Authors
 
